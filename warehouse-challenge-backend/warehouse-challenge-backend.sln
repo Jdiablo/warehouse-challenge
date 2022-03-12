@@ -19,6 +19,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{D76C3F28-F
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Domain.VehicleWarehouse.Services", "Domain\VehicleWarehouse\Service\Domain.VehicleWarehouse.Services.csproj", "{8268A12F-5140-4C48-9153-0FB3BE010512}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "VehicleWarehouse", "VehicleWarehouse", "{A59EA27A-A3C2-4C8A-AE34-367086FF4E90}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test.VehicleWarehouse.Serivces", "Test\VehicleWarehouse\Test.VehicleWarehouse.Serivces\Test.VehicleWarehouse.Serivces.csproj", "{7E048B49-BC5E-450D-BA84-4C3FE91DD3C7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -41,6 +45,10 @@ Global
 		{8268A12F-5140-4C48-9153-0FB3BE010512}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8268A12F-5140-4C48-9153-0FB3BE010512}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8268A12F-5140-4C48-9153-0FB3BE010512}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7E048B49-BC5E-450D-BA84-4C3FE91DD3C7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7E048B49-BC5E-450D-BA84-4C3FE91DD3C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7E048B49-BC5E-450D-BA84-4C3FE91DD3C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7E048B49-BC5E-450D-BA84-4C3FE91DD3C7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -51,6 +59,8 @@ Global
 		{93385181-F70D-4A55-B81A-68ED7A1D57BD} = {E670C562-2AC2-46AE-9511-B27C7E8E9DCE}
 		{85C9505B-BB3F-4C8D-AF34-1F02E439C23D} = {93385181-F70D-4A55-B81A-68ED7A1D57BD}
 		{8268A12F-5140-4C48-9153-0FB3BE010512} = {BBD5E148-4905-4697-88FA-99D3CEE57F85}
+		{A59EA27A-A3C2-4C8A-AE34-367086FF4E90} = {D76C3F28-FDE5-461B-B765-13EAFF0B09CA}
+		{7E048B49-BC5E-450D-BA84-4C3FE91DD3C7} = {A59EA27A-A3C2-4C8A-AE34-367086FF4E90}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {679A12E9-FB79-455F-8A62-676D894A2B75}
