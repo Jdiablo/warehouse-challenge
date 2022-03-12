@@ -11,6 +11,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Domain\VehicleWarehouse\Api\Domain.VehicleWarehouse.Api.csproj" />
+    <ProjectReference Include="..\Domain\VehicleWarehouse\Repository\FileRepository\Domain.VehicleWarehouse.FileRepository.csproj" />
   </ItemGroup>
 
 </Project>

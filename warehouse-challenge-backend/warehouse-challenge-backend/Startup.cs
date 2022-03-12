@@ -7,6 +7,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
 using Domain.VehicleWarehouse.Services;
+using Domain.VehicleWarehouse.FileRepository;
 
 namespace warehouse_challenge_backend
 {
@@ -28,6 +29,8 @@ namespace warehouse_challenge_backend
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "warehouse_challenge_backend", Version = "v1" });
             });
+
+            services.AddVehicleWarehouseFileRepo("warehouses.json");
             services.AddVehicleWarehouse();
         }
 

@@ -11,6 +11,9 @@ using System.Threading.Tasks;
 
 namespace Domain.VehicleWarehouse.FileRepository.Repository
 {
+    /// <summary>
+    /// Warehouse repository to retrieve data from JSON file
+    /// </summary>
     public class WarehouseRepository : IWarehouseRepository
     {
         private readonly string _filePath;

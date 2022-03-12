@@ -11,7 +11,7 @@ namespace Domain.VehicleWarehouse.FileRepository
 {
     public static class ServiceCollectionExtensions
     {
-        public static IServiceCollection AddVehicleWarehouse(this IServiceCollection serviceCollection, string jsonFilePath)
+        public static IServiceCollection AddVehicleWarehouseFileRepo(this IServiceCollection serviceCollection, string jsonFilePath)
             => serviceCollection.AddTransient<IWarehouseRepository>((sp) => new WarehouseRepository(jsonFilePath));
     }
 }
