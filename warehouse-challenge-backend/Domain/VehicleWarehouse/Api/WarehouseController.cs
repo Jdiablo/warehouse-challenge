@@ -8,6 +8,8 @@ using System.Threading.Tasks;
 
 namespace Domain.VehicleWarehouse.Api
 {
+    [Route("api/warehouse")]
+    [ApiController]
     public class WarehouseController : ControllerBase
     {
         private readonly IWarehouseService _warehouseService;
@@ -15,6 +17,12 @@ namespace Domain.VehicleWarehouse.Api
         public WarehouseController(IWarehouseService warehouseService)
         {
             _warehouseService = warehouseService;
+        }
+
+        [HttpGet("all")]
+        public async Task<IActionResult> GetAll()
+        {
+            return Ok(await _warehouseService.GetAllAsync());
         }
     }
 }

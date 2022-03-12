@@ -1,4 +1,6 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+﻿using Domain.VehicleWarehouse.Abstractions.Service;
+using Domain.VehicleWarehouse.Services.Service;
+using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,6 +13,6 @@ namespace Domain.VehicleWarehouse.Services
     {
 
         public static IServiceCollection AddVehicleWarehouse(this IServiceCollection serviceCollection)
-            => serviceCollection;
+            => serviceCollection.AddTransient<IWarehouseService, WarehouseService>();
     }
 }
