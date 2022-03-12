@@ -10,6 +10,6 @@ namespace Domain.VehicleWarehouse.Abstractions.Entities
 
         public string LocationLong { get; set; }
 
-        public WarehouseWing Cars { get; set; }
+        public WarehouseWing WarehouseWing { get; set; }
     }
 }
