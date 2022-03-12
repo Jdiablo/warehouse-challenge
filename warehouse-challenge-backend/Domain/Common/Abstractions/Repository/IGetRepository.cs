@@ -1,11 +1,8 @@
-﻿using Domain.VehicleWarehouse.Abstractions.Entities;
-using System;
+﻿using Domain.Common.Abstractions.Entities;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
-namespace Domain.VehicleWarehouse.Abstractions.Repository
+namespace Domain.Common.Abstractions.Repository
 {
     public interface IGetRepository
     {

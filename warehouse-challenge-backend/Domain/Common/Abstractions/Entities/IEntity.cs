@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Domain.VehicleWarehouse.Abstractions.Entities
+namespace Domain.Common.Abstractions.Entities
 {
     public interface IEntity
     {
