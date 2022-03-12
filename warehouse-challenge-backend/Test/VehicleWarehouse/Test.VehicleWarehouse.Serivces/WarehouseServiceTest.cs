@@ -20,7 +20,6 @@ namespace Test.VehicleWarehouse.Serivces
             Assert.NotEmpty(result);
         }
 
-
         [Fact]
         public void GetWarehouse()
         {

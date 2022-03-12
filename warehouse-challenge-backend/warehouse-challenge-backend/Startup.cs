@@ -6,10 +6,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using Domain.VehicleWarehouse.Services;
 
 namespace warehouse_challenge_backend
 {
@@ -31,6 +28,7 @@ namespace warehouse_challenge_backend
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "warehouse_challenge_backend", Version = "v1" });
             });
+            services.AddVehicleWarehouse();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
