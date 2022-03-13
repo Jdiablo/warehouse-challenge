@@ -37,7 +37,7 @@ namespace Domain.VehicleWarehouse.FileRepository.Repository
             return WarehouseMapper.FromDTO(fileData);
         }
 
-        public Task<Warehouse> GetAsync(string id)
+        public Task<Warehouse> GetAsync(int id)
         {
             throw new NotImplementedException();
         }

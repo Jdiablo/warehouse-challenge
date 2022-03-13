@@ -3,7 +3,7 @@ using Domain.VehicleWarehouse.Abstractions.Entities;
 
 namespace Domain.VehicleWarehouse.Abstractions.Repository
 {
-    public interface IWarehouseRepository : IGetRepository<Warehouse, string>
+    public interface IWarehouseRepository : IGetRepository<Warehouse, int>
     {
     }
 }
