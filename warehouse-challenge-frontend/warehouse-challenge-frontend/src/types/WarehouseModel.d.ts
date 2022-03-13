@@ -1,4 +1,4 @@
-import type WarehouseWingModel from "./WarehouseWing"
+import type WarehouseWingModel from "./WarehouseWingModel"
 
 export default interface WarehouseModel {
 	id: string;

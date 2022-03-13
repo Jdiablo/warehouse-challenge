@@ -5,15 +5,16 @@
     <ul class="list-group">
         <li class="list-group-item"
             v-for="item in currentWing.vehicles">
-            <Vehicle v-bind:currentVehicle="item"></Vehicle>
+            <Vehicle :currentVehicle="item" v-bind:isEditEnabled="isEditEnabled"></Vehicle>
         </li>
     </ul>
 </template>
 
 <script lang="ts">
-    import { defineComponent, PropType } from "vue";
-    import Vehicle from "./Vehicle.vue"
-    import type WarehouseWingModel from "@/types/WarehouseWing";
+    import { defineComponent } from "vue";
+    import Vehicle from "./Vehicle.vue";
+
+    import type WarehouseWingModel from "@/types/WarehouseWingModel";
 
     export default defineComponent({
         components: {
@@ -26,9 +27,10 @@
         },
         props: {
             currentWing: {
-                type: Object as PropType<WarehouseWingModel>,
+                type: Object,
                 required: true
             },
+            isEditEnabled: Boolean
         }
     });
 </script>

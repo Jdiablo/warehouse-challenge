@@ -10,14 +10,14 @@
         <input class="col-4 form-control" type="text" v-model="currentWarehouse.locationLong" :disabled="isEditEnabled == false" />
     </div>
     <div>
-        <WarehouseWing v-bind:currentWing="currentWarehouse.warehouseWing"></WarehouseWing>
+        <WarehouseWing :currentWing="currentWarehouse.warehouseWing" v-bind:isEditEnabled="isEditEnabled"></WarehouseWing>
     </div>
 </template>
 
 <script lang="ts">
-    import { defineComponent, PropType } from "vue"
-    import WarehouseWing from "./WarehouseWing.vue"
-    import type WarehouseModel from "@/types/Warehouse"
+    import { defineComponent } from "vue";
+    import WarehouseWing from "./WarehouseWing.vue";
+    import type WarehouseModel from "@/types/WarehouseModel";
 
     export default defineComponent({
         components: {
@@ -25,7 +25,7 @@
         },
         props: {
             currentWarehouse: {
-                type: Object as PropType<WarehouseModel>,
+                type: Object,
                 required: true
             },
             isEditEnabled: Boolean

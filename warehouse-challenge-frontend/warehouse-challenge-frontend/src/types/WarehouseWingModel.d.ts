@@ -1,4 +1,4 @@
-import type VehicleModel from "./Vehicle"
+import type VehicleModel from "./VehicleModel"
 
 export default interface WarehouseWingModel {
 	name: string;

@@ -37,6 +37,9 @@
     <Content Include="src\components\Vehicle.vue">
       <SubType>Code</SubType>
     </Content>
+    <Content Include="src\components\Warehouse.vue">
+      <SubType>Code</SubType>
+    </Content>
     <Content Include="src\components\WarehousesList.vue">
       <SubType>Code</SubType>
     </Content>
@@ -71,9 +74,9 @@
     </TypeScriptCompile>
     <TypeScriptCompile Include="src\shims-tsx.d.ts" />
     <TypeScriptCompile Include="src\shims-vue.d.ts" />
-    <TypeScriptCompile Include="src\types\Vehicle.d.ts" />
-    <TypeScriptCompile Include="src\types\Warehouse.d.ts" />
-    <TypeScriptCompile Include="src\types\WarehouseWing.d.ts" />
+    <TypeScriptCompile Include="src\types\VehicleModel.d.ts" />
+    <TypeScriptCompile Include="src\types\WarehouseModel.d.ts" />
+    <TypeScriptCompile Include="src\types\WarehouseWingModel.d.ts" />
   </ItemGroup>
   <Import Project="$(VSToolsPath)\Node.js Tools\Microsoft.NodejsToolsV2.targets" />
   <ProjectExtensions>

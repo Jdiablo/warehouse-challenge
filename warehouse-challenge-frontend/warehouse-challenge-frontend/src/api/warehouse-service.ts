@@ -1,5 +1,5 @@
 import http from "./http-client";
-import type Warehouse from "@/types/Warehouse"
+import type Warehouse from "@/types/WarehouseModel"
 
 class WarehouseService {
     serviceUrl = "warehouse";
