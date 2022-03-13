@@ -20,17 +20,7 @@ namespace Domain.VehicleWarehouse.Services.Service
 
         public async Task<IEnumerable<Warehouse>> GetAllAsync()
         {
-            var result = await _warehouseRepository.GetAllAsync();
-            
-            foreach (var warehouse in result)
-            {
-                var vehiclesList = warehouse.WarehouseWing.Vehicles.ToList();
-                
-                vehiclesList.Sort((d1, d2) => DateTime.Compare(d1.Vehicle.DateAdded, d2.Vehicle.DateAdded));
-                warehouse.WarehouseWing.Vehicles = vehiclesList;
-            }
-
-            return result;
+            return await _warehouseRepository.GetAllAsync();
         }
 
         public async Task<Warehouse> GetAsync(object id)
