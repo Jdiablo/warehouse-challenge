@@ -21,21 +21,25 @@
     </div>
     <div class="mb-3 row">
         <label>Date added</label>
-        <input type="number" class="form-control" v-model="currentVehicle.dateAdded" disabled="disabled" />
+        <input type="number" class="form-control" v-model="currentVehicle.dateAdded" disabled />
     </div>
 </template>
 
 <script lang="ts">
-    import { defineComponent } from "vue";
+    import { defineComponent, PropType } from "vue";
     import type Vehicle from "../types/Vehicle";
 
     export default defineComponent({
         data() {
             return {
-                currentVehicle: {} as Vehicle
+                
             }
         },
         props: {
+            currentVehicle: {
+                type: Object as PropType<Vehicle>,
+                required: true
+            },
             isEditEnabled: Boolean
         }
     });
