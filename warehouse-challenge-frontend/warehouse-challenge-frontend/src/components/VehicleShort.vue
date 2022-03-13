@@ -15,7 +15,7 @@
 
 <script lang="ts">
     import { defineComponent } from "vue";
-    import type VehicleModel from "@/types/VehicleModel";
+    import type VehicleShortModel from "@/types/VehicleShortModel";
 
     export default defineComponent({
         props: {
