@@ -34,7 +34,13 @@
     <Content Include="index.html" />
     <Content Include="public\favicon.ico" />
     <Content Include="src\App.vue" />
+    <Content Include="src\components\Vehicle.vue">
+      <SubType>Code</SubType>
+    </Content>
     <Content Include="src\components\WarehousesList.vue">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="src\components\WarehouseWing.vue">
       <SubType>Code</SubType>
     </Content>
     <Content Include="tsconfig.json" />
@@ -47,16 +53,27 @@
     <Folder Include="src\" />
     <Folder Include="src\assets\" />
     <Folder Include="src\components\" />
+    <Folder Include="src\api\" />
+    <Folder Include="src\types\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="src\main.ts" />
   </ItemGroup>
   <ItemGroup>
+    <TypeScriptCompile Include="src\api\http-client.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="src\api\warehouse-service.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
     <TypeScriptCompile Include="src\router.ts">
       <SubType>Code</SubType>
     </TypeScriptCompile>
     <TypeScriptCompile Include="src\shims-tsx.d.ts" />
     <TypeScriptCompile Include="src\shims-vue.d.ts" />
+    <TypeScriptCompile Include="src\types\Vehicle.d.ts" />
+    <TypeScriptCompile Include="src\types\Warehouse.d.ts" />
+    <TypeScriptCompile Include="src\types\WarehouseWing.d.ts" />
   </ItemGroup>
   <Import Project="$(VSToolsPath)\Node.js Tools\Microsoft.NodejsToolsV2.targets" />
   <ProjectExtensions>
