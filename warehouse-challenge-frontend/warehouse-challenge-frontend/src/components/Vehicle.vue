@@ -1,27 +1,27 @@
 <template>
     <div class="mb-3 row">
-        <label>Make</label>
-        <input type="text" class="form-control" v-model="currentVehicle.make" :disabled="isEditEnabled == false" />
+        <label class="col-3">Make</label>
+        <input class="col-9" type="text" v-model="currentVehicle.make" :disabled="isEditEnabled == false" />
     </div>
     <div class="mb-3 row">
-        <label>Model</label>
-        <input type="text" class="form-control" v-model="currentVehicle.model" :disabled="isEditEnabled == false" />
+        <label class="col-3">Model</label>
+        <input class="col-9" type="text" v-model="currentVehicle.model" :disabled="isEditEnabled == false" />
     </div>
     <div class="mb-3 row">
-        <label>Licensed</label>
-        <input type="checkbox" class="form-control" v-model="currentVehicle.licensed" :disabled="isEditEnabled == false" />
+        <label class="col-3">Licensed</label>
+        <input class="col-1" type="checkbox" v-model="currentVehicle.licensed" :disabled="isEditEnabled == false" />
     </div>
     <div class="mb-3 row">
-        <label>Year model</label>
-        <input type="number" class="form-control" v-model="currentVehicle.yearModel" :disabled="isEditEnabled == false" />
+        <label class="col-3">Year model</label>
+        <input class="col-9" type="number" v-model="currentVehicle.yearModel" :disabled="isEditEnabled == false" />
     </div>
     <div class="mb-3 row">
-        <label>Price</label>
-        <input type="number" class="form-control" v-model="currentVehicle.price" :disabled="isEditEnabled == false" />
+        <label class="col-3">Price</label>
+        <input class="col-9" type="number" v-model="currentVehicle.price" :disabled="isEditEnabled == false" />
     </div>
-    <div class="mb-3 row">
-        <label>Date added</label>
-        <input type="number" class="form-control" v-model="currentVehicle.dateAdded" disabled />
+    <div class="row">
+        <label class="col-3">Date added</label>
+        <input class="col-9" type="number" v-model="currentVehicle.dateAdded" disabled />
     </div>
 </template>
 

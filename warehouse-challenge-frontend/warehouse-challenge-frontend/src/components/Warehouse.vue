@@ -1,13 +1,12 @@
 <template>
-    <div class="mb-3 row">
-        <label class="col-2">Name</label>
-        <input class="col-10 form-control" type="text" v-model="currentWarehouse.name" :disabled="isEditEnabled == false" />
-    </div>
+    <h4>
+        {{currentWarehouse.name}}
+    </h4>
     <div class="mb-3 row">
         <label class="col-2">Lat</label>
-        <input class="col-4 form-control" type="text" v-model="currentWarehouse.locationLat" :disabled="isEditEnabled == false" />
+        <input class="col-4" type="text" v-model="currentWarehouse.locationLat" :disabled="isEditEnabled == false" />
         <label class="col-2">Lon</label>
-        <input class="col-4 form-control" type="text" v-model="currentWarehouse.locationLong" :disabled="isEditEnabled == false" />
+        <input class="col-4" type="text" v-model="currentWarehouse.locationLong" :disabled="isEditEnabled == false" />
     </div>
     <div>
         <WarehouseWing :currentWing="currentWarehouse.warehouseWing" v-bind:isEditEnabled="isEditEnabled"></WarehouseWing>

@@ -1,7 +1,8 @@
 <template>
-    <div class="card" v-for="curWarehouse in warehousesList">
-        <div class="card-body">
+    <div v-for="curWarehouse in warehousesList">
+        <div>
             <Warehouse :currentWarehouse="curWarehouse" v-bind:isEditEnabled="false"></Warehouse>
+            <hr />
         </div>
     </div>
 </template>

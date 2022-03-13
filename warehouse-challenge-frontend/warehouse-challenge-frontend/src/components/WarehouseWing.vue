@@ -1,13 +1,14 @@
 <template>
-    <h4>
+    <h5>
         {{currentWing.name}}
-    </h4>
-    <ul class="list-group">
-        <li class="list-group-item"
-            v-for="item in currentWing.vehicles">
-            <Vehicle :currentVehicle="item" v-bind:isEditEnabled="isEditEnabled"></Vehicle>
-        </li>
-    </ul>
+    </h5>
+    <div style="display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 4rem">
+        <div class="card" v-for="item in currentWing.vehicles">
+            <div class="card-body">
+                <Vehicle :currentVehicle="item" v-bind:isEditEnabled="isEditEnabled"></Vehicle>
+            </div>
+        </div>
+    </div>
 </template>
 
 <script lang="ts">
