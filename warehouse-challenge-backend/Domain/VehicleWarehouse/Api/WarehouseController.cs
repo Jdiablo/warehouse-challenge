@@ -1,4 +1,5 @@
 ﻿using Domain.VehicleWarehouse.Abstractions.Service;
+using Domain.VehicleWarehouse.Api.Mappers;
 using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -24,7 +25,8 @@ namespace Domain.VehicleWarehouse.Api
         [HttpGet("all")]
         public async Task<IActionResult> GetAll()
         {
-            return Ok(await _warehouseService.GetAllAsync());
+            var result = await _warehouseService.GetAllAsync();
+            return Ok(result.Select(x => WarehouseMapper.ToDto(x)));
         }
     }
 }
