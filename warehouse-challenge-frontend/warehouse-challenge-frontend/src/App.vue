@@ -1,20 +1,17 @@
 <template>
     <div id="app">
-        <Home msg="Hello world!" />
+        <nav class="navbar navbar-expand navbar-dark bg-dark">
+            <router-link to="/" class="navbar-brand">Warehouses</router-link>
+        </nav>
+        <div class="container mt-3">
+            <router-view />
+        </div>
     </div>
 </template>
 
 <script lang="ts">
-    import { Component, Vue } from 'vue-property-decorator';
-    import Home from './components/Home.vue';
-
-    @Component({
-        components: {
-            Home
-        }
-    })
-    export default class App extends Vue { }
+    import { defineComponent } from "vue";
+    export default defineComponent({
+        name: "App",
+    });
 </script>
-
-<style>
-</style>

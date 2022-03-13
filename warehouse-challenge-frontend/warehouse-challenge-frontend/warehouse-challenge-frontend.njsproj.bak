@@ -34,9 +34,7 @@
     <Content Include="index.html" />
     <Content Include="public\favicon.ico" />
     <Content Include="src\App.vue" />
-    <Content Include="src\components\WarehousesList.vue">
-      <SubType>Code</SubType>
-    </Content>
+    <Content Include="src\components\Home.vue" />
     <Content Include="tsconfig.json" />
     <Content Include="package.json" />
     <Content Include="README.md" />
@@ -51,13 +49,6 @@
   <ItemGroup>
     <None Include="src\main.ts" />
   </ItemGroup>
-  <ItemGroup>
-    <TypeScriptCompile Include="src\router.ts">
-      <SubType>Code</SubType>
-    </TypeScriptCompile>
-    <TypeScriptCompile Include="src\shims-tsx.d.ts" />
-    <TypeScriptCompile Include="src\shims-vue.d.ts" />
-  </ItemGroup>
   <Import Project="$(VSToolsPath)\Node.js Tools\Microsoft.NodejsToolsV2.targets" />
   <ProjectExtensions>
     <VisualStudio>
@@ -70,7 +61,7 @@
           <IISUrl>http://localhost:48022/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>True</UseCustomServer>
-          <CustomServerUrl>http://localhost:3000</CustomServerUrl>
+          <CustomServerUrl>http://localhost:1337</CustomServerUrl>
           <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
         </WebProjectProperties>
       </FlavorProperties>
