@@ -21,7 +21,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Domain.VehicleWarehouse.Ser
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "VehicleWarehouse", "VehicleWarehouse", "{A59EA27A-A3C2-4C8A-AE34-367086FF4E90}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test.VehicleWarehouse.Services", "Test\VehicleWarehouse\Test.VehicleWarehouse.Serivces\Test.VehicleWarehouse.Services.csproj", "{7E048B49-BC5E-450D-BA84-4C3FE91DD3C7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Test.VehicleWarehouse.Services", "Test\VehicleWarehouse\Test.VehicleWarehouse.Serivces\Test.VehicleWarehouse.Services.csproj", "{7E048B49-BC5E-450D-BA84-4C3FE91DD3C7}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Domain.VehicleWarehouse.Api", "Domain\VehicleWarehouse\Api\Domain.VehicleWarehouse.Api.csproj", "{FBB44F5A-73D8-4CCC-AC6F-ACF9CC0AD0E8}"
 EndProject
@@ -29,7 +29,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Repository", "Repository", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Domain.VehicleWarehouse.FileRepository", "Domain\VehicleWarehouse\Repository\FileRepository\Domain.VehicleWarehouse.FileRepository.csproj", "{C96B4B15-7F4E-4C95-9143-4C54722320C8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test.VehicleWarehouse.Repositories", "Test\VehicleWarehouse\Test.VehicleWarehouse.Repositories\Test.VehicleWarehouse.Repositories.csproj", "{A82E0074-D540-4C11-8A4D-6203BBB0115F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Test.VehicleWarehouse.Repositories", "Test\VehicleWarehouse\Test.VehicleWarehouse.Repositories\Test.VehicleWarehouse.Repositories.csproj", "{A82E0074-D540-4C11-8A4D-6203BBB0115F}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Domain.VehicleWarehouse.SQLiteRepository", "Domain\VehicleWarehouse\Repository\SQLiteRepository\Domain.VehicleWarehouse.SQLiteRepository.csproj", "{B4F43322-8641-4D4C-89C8-8B84DFA80194}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -69,6 +71,10 @@ Global
 		{A82E0074-D540-4C11-8A4D-6203BBB0115F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A82E0074-D540-4C11-8A4D-6203BBB0115F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A82E0074-D540-4C11-8A4D-6203BBB0115F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B4F43322-8641-4D4C-89C8-8B84DFA80194}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B4F43322-8641-4D4C-89C8-8B84DFA80194}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B4F43322-8641-4D4C-89C8-8B84DFA80194}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B4F43322-8641-4D4C-89C8-8B84DFA80194}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -85,6 +91,7 @@ Global
 		{3D711D5C-DA33-451A-A52A-5F06927474A1} = {BBD5E148-4905-4697-88FA-99D3CEE57F85}
 		{C96B4B15-7F4E-4C95-9143-4C54722320C8} = {3D711D5C-DA33-451A-A52A-5F06927474A1}
 		{A82E0074-D540-4C11-8A4D-6203BBB0115F} = {A59EA27A-A3C2-4C8A-AE34-367086FF4E90}
+		{B4F43322-8641-4D4C-89C8-8B84DFA80194} = {3D711D5C-DA33-451A-A52A-5F06927474A1}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {679A12E9-FB79-455F-8A62-676D894A2B75}

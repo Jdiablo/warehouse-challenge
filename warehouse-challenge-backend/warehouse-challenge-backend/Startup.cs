@@ -7,7 +7,8 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
 using Domain.VehicleWarehouse.Services;
-using Domain.VehicleWarehouse.FileRepository;
+using Domain.VehicleWarehouse.SQLiteRepository;
+using System;
 
 namespace warehouse_challenge_backend
 {
@@ -38,7 +39,10 @@ namespace warehouse_challenge_backend
                     });
             });
 
-            services.AddVehicleWarehouseFileRepo("warehouses.json");
+            //services.AddVehicleWarehouseFileRepo("warehouses.json");
+            var folder = Environment.SpecialFolder.LocalApplicationData;
+            var path = Environment.GetFolderPath(folder);
+            services.AddVehicleWarehouseSqliteRepo(path);
             services.AddVehicleWarehouse();
         }
 

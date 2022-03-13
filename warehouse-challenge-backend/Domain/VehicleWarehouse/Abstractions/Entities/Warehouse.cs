@@ -2,7 +2,7 @@
 
 namespace Domain.VehicleWarehouse.Abstractions.Entities
 {
-    public class Warehouse : IdentifiableEntity<string>
+    public class Warehouse : IdentifiableEntity<int>
     {
         public string Name { get; set; }
 

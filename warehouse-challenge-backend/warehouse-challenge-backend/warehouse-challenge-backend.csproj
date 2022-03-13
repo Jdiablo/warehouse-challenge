@@ -11,7 +11,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Domain\VehicleWarehouse\Api\Domain.VehicleWarehouse.Api.csproj" />
-    <ProjectReference Include="..\Domain\VehicleWarehouse\Repository\FileRepository\Domain.VehicleWarehouse.FileRepository.csproj" />
+    <ProjectReference Include="..\Domain\VehicleWarehouse\Repository\SQLiteRepository\Domain.VehicleWarehouse.SQLiteRepository.csproj" />
   </ItemGroup>
 
   <ProjectExtensions><VisualStudio><UserProperties properties_4launchsettings_1json__JsonSchema="" /></VisualStudio></ProjectExtensions>
