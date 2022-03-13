@@ -13,7 +13,7 @@
 <script lang="ts">
     import { defineComponent, PropType } from "vue";
     import Vehicle from "./Vehicle.vue"
-    import type WarehouseWing from "../types/WarehouseWing";
+    import type WarehouseWing from "@/types/WarehouseWing";
 
     export default defineComponent({
         components: {
