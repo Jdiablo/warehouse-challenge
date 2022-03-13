@@ -5,7 +5,7 @@
     <div style="display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 4rem">
         <div class="card" v-for="item in currentWing.vehicles">
             <div class="card-body">
-                <Vehicle :currentVehicle="item" v-bind:isEditEnabled="isEditEnabled"></Vehicle>
+                <VehicleShort :currentVehicle="item" v-bind:isEditEnabled="isEditEnabled"></VehicleShort>
             </div>
         </div>
     </div>
@@ -13,13 +13,13 @@
 
 <script lang="ts">
     import { defineComponent } from "vue";
-    import Vehicle from "./Vehicle.vue";
+    import VehicleShort from "./VehicleShort.vue";
 
     import type WarehouseWingModel from "@/types/WarehouseWingModel";
 
     export default defineComponent({
         components: {
-            Vehicle
+            VehicleShort
         },
         data() {
             return {
