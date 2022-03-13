@@ -8,4 +8,37 @@
     <ProjectReference Include="..\..\Common\Abstractions\Domain.Common.Abstractions.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Compile Update="Entities\Vehicle.cs">
+      <Generator>DtsGenerator</Generator>
+      <LastGenOutput>Vehicle.cs.d.ts</LastGenOutput>
+    </Compile>
+    <Compile Update="Entities\Warehouse.cs">
+      <Generator>DtsGenerator</Generator>
+      <LastGenOutput>Warehouse.cs.d.ts</LastGenOutput>
+    </Compile>
+    <Compile Update="Entities\WarehouseWing.cs">
+      <Generator>DtsGenerator</Generator>
+      <LastGenOutput>WarehouseWing.cs.d.ts</LastGenOutput>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Entities\Vehicle.cs.d.ts">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Vehicle.cs</DependentUpon>
+    </None>
+    <None Update="Entities\Warehouse.cs.d.ts">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Warehouse.cs</DependentUpon>
+    </None>
+    <None Update="Entities\WarehouseWing.cs.d.ts">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>WarehouseWing.cs</DependentUpon>
+    </None>
+  </ItemGroup>
+
 </Project>

@@ -29,6 +29,14 @@ namespace warehouse_challenge_backend
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "warehouse_challenge_backend", Version = "v1" });
             });
+            services.AddCors(options =>
+            {
+                options.AddPolicy("Default",
+                    builder =>
+                    {
+                        builder.AllowAnyOrigin();
+                    });
+            });
 
             services.AddVehicleWarehouseFileRepo("warehouses.json");
             services.AddVehicleWarehouse();
@@ -45,6 +53,8 @@ namespace warehouse_challenge_backend
             }
 
             app.UseRouting();
+
+            app.UseCors();
 
             app.UseAuthorization();
 

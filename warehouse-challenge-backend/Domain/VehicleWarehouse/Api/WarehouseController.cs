@@ -1,4 +1,5 @@
 ﻿using Domain.VehicleWarehouse.Abstractions.Service;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -8,6 +9,7 @@ using System.Threading.Tasks;
 
 namespace Domain.VehicleWarehouse.Api
 {
+    [EnableCors("Default")]
     [Route("api/warehouse")]
     [ApiController]
     public class WarehouseController : ControllerBase
