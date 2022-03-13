@@ -10,19 +10,20 @@ using System.Threading.Tasks;
 
 namespace Domain.VehicleWarehouse.SQLiteRepository.Configurations
 {
-    public class WarehouseConfiguration : IEntityTypeConfiguration<Warehouse>
+    public class WarehouseWingConfiguration : IEntityTypeConfiguration<WarehouseWing>
     {
-        public void Configure(EntityTypeBuilder<Warehouse> builder)
+        public void Configure(EntityTypeBuilder<WarehouseWing> builder)
         {
-            builder.ToTable("warehouse");
+            builder.ToTable("warehouse_wing");
 
             builder.HasKey(x => x.Id);
 
             builder.Property(x => x.Id).HasColumnName("id");
-            builder.Property(x => x.LocationLat).HasColumnName("location_lat");
-            builder.Property(x => x.LocationLong).HasColumnName("location_long");
+            builder.Property(x => x.Name).HasColumnName("name");
+            builder.Property(x => x.WarehouseId).HasColumnName("warehouse_id");
 
-            builder.HasOne(x => x.WarehouseWing).WithOne(x => x.Warehouse).HasConstraintName("warehouse_id");
+            //builder.HasOne(x => x.Warehouse).WithOne(x => x.WarehouseWing);
+            builder.HasMany(x => x.Vehicles).WithOne();
         }
     }
 }

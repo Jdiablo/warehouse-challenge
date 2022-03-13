@@ -37,7 +37,7 @@ namespace Test.VehicleWarehouse.Serivces
                 list.Add(Moq.It.IsAny<Warehouse>());
                 return Task.FromResult(list as IEnumerable<Warehouse>);
             });
-            repo.Setup(x => x.GetAsync(It.IsAny<string>())).Returns(() => Task.FromResult(new Warehouse()));
+            repo.Setup(x => x.GetAsync(It.IsAny<int>())).Returns(() => Task.FromResult(new Warehouse()));
 
             return repo.Object;
         }

@@ -21,11 +21,12 @@ namespace Domain.VehicleWarehouse.Services.Service
         public async Task<IEnumerable<Warehouse>> GetAllAsync()
         {
             var result = await _warehouseRepository.GetAllAsync();
+            
             foreach (var warehouse in result)
             {
                 var vehiclesList = warehouse.WarehouseWing.Vehicles.ToList();
                 
-                vehiclesList.Sort((d1, d2) => DateTime.Compare(d1.DateAdded, d2.DateAdded));
+                vehiclesList.Sort((d1, d2) => DateTime.Compare(d1.Vehicle.DateAdded, d2.Vehicle.DateAdded));
                 warehouse.WarehouseWing.Vehicles = vehiclesList;
             }
 
@@ -34,7 +35,7 @@ namespace Domain.VehicleWarehouse.Services.Service
 
         public async Task<Warehouse> GetAsync(object id)
         {
-            return await _warehouseRepository.GetAsync((string)id);
+            return await _warehouseRepository.GetAsync((int)id);
         }
     }
 }

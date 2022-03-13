@@ -9,10 +9,12 @@ namespace Domain.VehicleWarehouse.SQLiteRepository.Repository
     {
         public WarehouseRepository(VehicleWarehouseDbContext dbContext) : base(dbContext)
         {
+
         }
 
         protected override IQueryable<Warehouse> Queryable => base.Queryable
             .Include(x => x.WarehouseWing)
-                .ThenInclude(x => x.Vehicles);
+                .ThenInclude(x => x.Vehicles)
+                    .ThenInclude(x => x.Vehicle);
     }
 }
