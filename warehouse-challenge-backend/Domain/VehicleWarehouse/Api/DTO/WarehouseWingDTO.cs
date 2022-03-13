@@ -10,6 +10,6 @@ namespace Domain.VehicleWarehouse.Api.DTO
     {
         public string Name { get; set; }
 
-        public IEnumerable<VehicleDTO> Vehicles { get; set; }
+        public IEnumerable<VehicleShortDTO> Vehicles { get; set; }
     }
 }
