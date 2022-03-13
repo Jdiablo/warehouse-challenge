@@ -13,7 +13,7 @@
 <script lang="ts">
     import { defineComponent, PropType } from "vue";
     import Vehicle from "./Vehicle.vue"
-    import type WarehouseWing from "@/types/WarehouseWing";
+    import type WarehouseWingModel from "@/types/WarehouseWing";
 
     export default defineComponent({
         components: {
@@ -26,7 +26,7 @@
         },
         props: {
             currentWing: {
-                type: Object as PropType<WarehouseWing>,
+                type: Object as PropType<WarehouseWingModel>,
                 required: true
             },
         }

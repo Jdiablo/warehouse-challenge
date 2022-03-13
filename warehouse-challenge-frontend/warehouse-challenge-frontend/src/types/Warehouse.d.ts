@@ -1,9 +1,9 @@
-import type WarehouseWing from "./WarehouseWing"
+import type WarehouseWingModel from "./WarehouseWing"
 
-export default interface Warehouse {
+export default interface WarehouseModel {
 	id: string;
 	name: string;
 	locationLat: string;
 	locationLong: string;
-	warehouseWing: WarehouseWing;
+	warehouseWing: WarehouseWingModel;
 }

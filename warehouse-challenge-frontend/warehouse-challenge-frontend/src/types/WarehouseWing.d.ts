@@ -1,6 +1,6 @@
-import type Vehicle from "./Vehicle"
+import type VehicleModel from "./Vehicle"
 
-export default interface WarehouseWing {
+export default interface WarehouseWingModel {
 	name: string;
-	vehicles: Vehicle[];
+	vehicles: VehicleModel[];
 }

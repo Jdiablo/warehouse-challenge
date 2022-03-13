@@ -27,7 +27,7 @@
 
 <script lang="ts">
     import { defineComponent, PropType } from "vue";
-    import type Vehicle from "../types/Vehicle";
+    import type VehicleModel from "@/types/Vehicle";
 
     export default defineComponent({
         data() {
@@ -37,7 +37,7 @@
         },
         props: {
             currentVehicle: {
-                type: Object as PropType<Vehicle>,
+                type: Object as PropType<VehicleModel>,
                 required: true
             },
             isEditEnabled: Boolean
