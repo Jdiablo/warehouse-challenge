@@ -11,7 +11,7 @@ namespace Domain.VehicleWarehouse.SQLiteRepository.Repository
         {
         }
 
-        protected override IQueryable<Warehouse> Queryable => base.Queryable
+        protected override IQueryable<Warehouse> ShortQueryable => base.ShortQueryable
             .Include(x => x.WarehouseWing)
                 .ThenInclude(x => x.Vehicles);
     }

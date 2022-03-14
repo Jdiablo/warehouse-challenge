@@ -12,7 +12,7 @@ namespace Domain.VehicleWarehouse.SQLiteRepository.Repository
         {
         }
 
-        protected override IQueryable<Vehicle> Queryable => base.Queryable
+        protected override IQueryable<Vehicle> FullQueryable => base.FullQueryable
             .Include(x => x.WarehouseWing)
                 .ThenInclude(x => x.Warehouse);
     }

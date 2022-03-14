@@ -17,16 +17,18 @@ namespace Domain.VehicleWarehouse.SQLiteRepository.Repository
             _dbContext = dbContext;
         }
 
-        protected virtual IQueryable<TEntity> Queryable => _dbContext.Set<TEntity>().AsQueryable();
+        protected virtual IQueryable<TEntity> ShortQueryable => _dbContext.Set<TEntity>().AsQueryable();
+
+        protected virtual IQueryable<TEntity> FullQueryable => _dbContext.Set<TEntity>().AsQueryable();
 
         public virtual async Task<IEnumerable<TEntity>> GetAllAsync()
         {
-            return await Queryable.ToListAsync();
+            return await ShortQueryable.ToListAsync();
         }
 
         public virtual async Task<TEntity> GetAsync(TIdentifier id)
         {
-            return await Queryable.FirstOrDefaultAsync(x => x.Id.Equals(id));
+            return await FullQueryable.FirstOrDefaultAsync(x => x.Id.Equals(id));
         }
     }
 }
