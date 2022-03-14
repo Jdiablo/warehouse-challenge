@@ -22,6 +22,9 @@ namespace Domain.VehicleWarehouse.Api
         public async Task<IActionResult> Get(int id)
         {
             var result = await _vehicleService.GetAsync(id);
+            if (result == null)
+                return BadRequest();
+
             return Ok(VehicleMapper.ToFullDto(result));
         }
     }

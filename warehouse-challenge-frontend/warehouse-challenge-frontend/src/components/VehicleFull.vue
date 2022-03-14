@@ -56,6 +56,11 @@
                 VehicleService.get(id)
                     .then((vehicle: VehicleFullModel) => {
                         this.currentVehicle = vehicle;
+                    })
+                    .catch(() => {
+                        this.$toast('Server returned some error', {
+                            type: 'error',
+                        });
                     });
             }
         },

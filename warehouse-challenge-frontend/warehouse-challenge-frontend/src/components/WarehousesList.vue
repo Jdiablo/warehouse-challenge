@@ -1,9 +1,12 @@
 <template>
-    <div v-for="curWarehouse in warehousesList">
+    <div v-if="warehousesList.length > 0" v-for="curWarehouse in warehousesList">
         <div class="warehouse-container">
             <Warehouse :currentWarehouse="curWarehouse" v-bind:isEditEnabled="false"></Warehouse>
             <hr />
         </div>
+    </div>
+    <div v-else>
+        Loading...
     </div>
 </template>
 
