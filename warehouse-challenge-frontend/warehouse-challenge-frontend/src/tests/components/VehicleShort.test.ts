@@ -16,7 +16,7 @@ test('renders a vehicle short card info', async () => {
         }
     });
 
-    expect(wrapper.html()).toContain('Model')
+    expect(wrapper.html()).toContain('Model');
 });
 
 test('non licensed car doesnt have Details button', async () => {
@@ -31,5 +31,24 @@ test('non licensed car doesnt have Details button', async () => {
         }
     });
 
-    expect(wrapper.html()).not.toContain('Details')
+    expect(wrapper.html()).not.toContain('Details');
+});
+
+test('isEditEnabled prop affects inputs', async () => {
+    let vehicleData = { licensed: true, id: 1 } as VehicleShortModel;
+
+    const wrapper = mount(VehicleShort, {
+        props: {
+            currentVehicle: vehicleData,
+            isEditEnabled: false
+        },
+        global: {
+            plugins: [router]
+        }
+    });
+
+    expect(wrapper.find('input').html()).toContain('disabled');
+    await wrapper.setProps({ isEditEnabled: true });
+
+    expect(wrapper.find('input').html()).not.toContain('disabled');
 });
