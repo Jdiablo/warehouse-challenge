@@ -8,9 +8,9 @@ using System.Threading.Tasks;
 
 namespace Domain.VehicleWarehouse.FileRepository.Mappers
 {
-    public static class VehicleMapper
+    public static class VehicleFileDTOMapper
     {
-        public static Vehicle FromDTO(VehicleDTO dto)
+        public static Vehicle FromDTO(VehicleFileDTO dto)
         {
             var result = new Vehicle()
             {
@@ -29,7 +29,7 @@ namespace Domain.VehicleWarehouse.FileRepository.Mappers
             return result;
         }
 
-        public static IEnumerable<Vehicle> FromDTO(IEnumerable<VehicleDTO> dtos)
+        public static IEnumerable<Vehicle> FromDTO(IEnumerable<VehicleFileDTO> dtos)
             => dtos.Select(x => FromDTO(x));
     }
 }

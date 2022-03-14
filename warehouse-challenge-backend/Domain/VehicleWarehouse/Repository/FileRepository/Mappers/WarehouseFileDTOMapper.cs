@@ -8,25 +8,25 @@ using System.Threading.Tasks;
 
 namespace Domain.VehicleWarehouse.FileRepository.Mappers
 {
-    public static class WarehouseMapper
+    public static class WarehouseFileDTOMapper
     {
-        public static Warehouse FromDTO(WarehouseDTO dto)
+        public static Warehouse FromDTO(WarehouseFileDTO dto)
         {
             return new Warehouse()
             {
-                Id = dto.Id,
+                Id = int.Parse(dto.Id),
                 Name = dto.Name,
                 LocationLat = dto.Location?.Lat,
                 LocationLong = dto.Location?.Long,
                 WarehouseWing = new WarehouseWing()
                 {
                     Name = dto.Cars?.Location,
-                    Vehicles = VehicleMapper.FromDTO(dto.Cars?.Vehicles)
+                    Vehicles = VehicleFileDTOMapper.FromDTO(dto.Cars?.Vehicles)
                 }
             };
         }
 
-        public static IEnumerable<Warehouse> FromDTO(IEnumerable<WarehouseDTO> dtos)
+        public static IEnumerable<Warehouse> FromDTO(IEnumerable<WarehouseFileDTO> dtos)
             => dtos.Select(x => FromDTO(x));
     }
 }

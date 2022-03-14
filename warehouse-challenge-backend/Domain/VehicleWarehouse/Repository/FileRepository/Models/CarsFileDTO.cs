@@ -7,12 +7,12 @@ using System.Threading.Tasks;
 
 namespace Domain.VehicleWarehouse.FileRepository.Models
 {
-    public class LocationDTO
+    public class CarsFileDTO
     {
-        [JsonPropertyName("lat")]
-        public string Lat { get; set; }
+        [JsonPropertyName("location")]
+        public string Location { get; set; }
 
-        [JsonPropertyName("long")]
-        public string Long { get; set; }
+        [JsonPropertyName("vehicles")]
+        public List<VehicleFileDTO> Vehicles { get; set; }
     }
 }

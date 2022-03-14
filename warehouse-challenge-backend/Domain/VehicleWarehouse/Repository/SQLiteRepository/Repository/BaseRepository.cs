@@ -20,8 +20,16 @@ namespace Domain.VehicleWarehouse.SQLiteRepository.Repository
             _dbContext = dbContext;
         }
 
+        /// <summary>
+        /// Queryable set to work with 'short' entity data without any joins (if possible)
+        /// Used by 'GetAllAsync' method
+        /// </summary>
         protected virtual IQueryable<TEntity> ShortQueryable => _dbContext.Set<TEntity>().AsQueryable();
 
+        /// <summary>
+        /// Queryable set to work with 'full' entity data with any external joins. Child component should override with .Include (if possible)
+        /// Used by 'GetAsync' method
+        /// </summary>
         protected virtual IQueryable<TEntity> FullQueryable => _dbContext.Set<TEntity>().AsQueryable();
 
         public virtual async Task<IEnumerable<TEntity>> GetAllAsync()

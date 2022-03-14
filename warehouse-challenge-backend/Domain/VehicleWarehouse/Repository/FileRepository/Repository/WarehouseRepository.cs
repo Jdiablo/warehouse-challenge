@@ -6,6 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -33,11 +34,17 @@ namespace Domain.VehicleWarehouse.FileRepository.Repository
 
         public async Task<IEnumerable<Warehouse>> GetAllAsync()
         {
-            var fileData = System.Text.Json.JsonSerializer.Deserialize<IEnumerable<WarehouseDTO>>(await GetFileDataAsync());
-            return WarehouseMapper.FromDTO(fileData);
+            var fileData = System.Text.Json.JsonSerializer.Deserialize<IEnumerable<WarehouseFileDTO>>(await GetFileDataAsync());
+            return WarehouseFileDTOMapper.FromDTO(fileData);
         }
 
+        // We can't retrieve specific entity from file
         public Task<Warehouse> GetAsync(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<Warehouse> GetAsync(Expression<Func<Warehouse, bool>> expression)
         {
             throw new NotImplementedException();
         }

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Domain.VehicleWarehouse.FileRepository.Models
 {
-    public class VehicleDTO
+    public class VehicleFileDTO
     {
         [JsonPropertyName("_id")]
         public int Id { get; set; }

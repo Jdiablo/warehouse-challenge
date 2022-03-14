@@ -39,7 +39,7 @@ namespace warehouse_challenge_backend
                     });
             });
 
-            //services.AddVehicleWarehouseFileRepo("warehouses.json");
+            //services.AddVehicleWarehouseFileRepo("warehouses.json"); // Since phase 2 json file isn't required anymore. Using sqlite DB file isntead
             services.AddVehicleWarehouseSqliteRepo("warehouses.db");
             services.AddVehicleWarehouse();
         }
