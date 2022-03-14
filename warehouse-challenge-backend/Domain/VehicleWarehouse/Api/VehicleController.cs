@@ -22,7 +22,7 @@ namespace Domain.VehicleWarehouse.Api
         public async Task<IActionResult> Get(int id)
         {
             var result = await _vehicleService.GetAsync(id);
-            return Ok(VehicleMapper.ToDto(result));
+            return Ok(VehicleMapper.ToFullDto(result));
         }
     }
 }

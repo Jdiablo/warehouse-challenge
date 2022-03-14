@@ -5,7 +5,7 @@ namespace Domain.VehicleWarehouse.Api.Mappers
 {
     public static class VehicleMapper
     {
-        public static VehicleShortDTO ToDto(Vehicle vehicle)
+        public static VehicleShortDTO ToShortDto(Vehicle vehicle)
         {
             return new VehicleShortDTO()
             {
@@ -13,6 +13,20 @@ namespace Domain.VehicleWarehouse.Api.Mappers
                 DateAdded = vehicle.DateAdded.ToShortDateString(),
                 Make = vehicle.Make,
                 Model = vehicle.Model,
+            };
+        }
+
+        public static VehicleFullDTO ToFullDto(Vehicle vehicle)
+        {
+            return new VehicleFullDTO()
+            {
+                Id = vehicle.Id,
+                DateAdded = vehicle.DateAdded.ToShortDateString(),
+                Make = vehicle.Make,
+                Model = vehicle.Model,
+                Licensed = vehicle.Licensed,
+                Price = vehicle.Price,
+                YearModel = vehicle.YearModel,
             };
         }
     }
