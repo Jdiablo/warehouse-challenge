@@ -1,6 +1,6 @@
 <template>
     <div v-for="curWarehouse in warehousesList">
-        <div>
+        <div class="warehouse-container">
             <Warehouse :currentWarehouse="curWarehouse" v-bind:isEditEnabled="false"></Warehouse>
             <hr />
         </div>
@@ -25,7 +25,7 @@
             }
         },
         methods: {
-            getAllWarehouses() {
+            getAllWarehouses() { 
                 WarehouseService.getAll()
                     .then((warehouses: WarehouseModel[]) => {
                         this.warehousesList = warehouses;
