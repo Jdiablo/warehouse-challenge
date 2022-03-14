@@ -81,6 +81,7 @@
     </TypeScriptCompile>
     <TypeScriptCompile Include="src\shims-tsx.d.ts" />
     <TypeScriptCompile Include="src\shims-vue.d.ts" />
+    <TypeScriptCompile Include="src\tests\components\VehicleFull.test.ts" />
     <TypeScriptCompile Include="src\types\VehicleFullModel.ts" />
     <TypeScriptCompile Include="src\types\VehicleShortModel.d.ts" />
     <TypeScriptCompile Include="src\types\WarehouseModel.d.ts" />
