@@ -11,5 +11,9 @@ namespace Domain.VehicleWarehouse.SQLiteRepository.Repository
         public VehicleRepository(VehicleWarehouseDbContext dbContext) : base(dbContext)
         {
         }
+
+        protected override IQueryable<Vehicle> Queryable => base.Queryable
+            .Include(x => x.WarehouseWing)
+                .ThenInclude(x => x.Warehouse);
     }
 }

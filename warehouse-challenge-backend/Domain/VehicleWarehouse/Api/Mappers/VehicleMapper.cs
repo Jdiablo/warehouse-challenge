@@ -13,6 +13,7 @@ namespace Domain.VehicleWarehouse.Api.Mappers
                 DateAdded = vehicle.DateAdded.ToShortDateString(),
                 Make = vehicle.Make,
                 Model = vehicle.Model,
+                Licensed = vehicle.Licensed
             };
         }
 
@@ -27,6 +28,10 @@ namespace Domain.VehicleWarehouse.Api.Mappers
                 Licensed = vehicle.Licensed,
                 Price = vehicle.Price,
                 YearModel = vehicle.YearModel,
+                WarehouseName = vehicle.WarehouseWing.Warehouse.Name,
+                LocationName = vehicle.WarehouseWing.Name,
+                LocationLat = vehicle.WarehouseWing.Warehouse.LocationLat,
+                LocationLong = vehicle.WarehouseWing.Warehouse.LocationLong
             };
         }
     }

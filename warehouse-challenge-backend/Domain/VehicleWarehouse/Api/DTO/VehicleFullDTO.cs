@@ -13,5 +13,13 @@ namespace Domain.VehicleWarehouse.Api.DTO
         public decimal Price { get; set; }
 
         public bool Licensed { get; set; }
+
+        public string WarehouseName { get; set; }
+
+        public string LocationName { get; set; }
+
+        public string LocationLat { get; set; }
+
+        public string LocationLong { get; set; }
     }
 }

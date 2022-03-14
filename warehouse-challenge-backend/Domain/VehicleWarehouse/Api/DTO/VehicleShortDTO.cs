@@ -15,5 +15,7 @@ namespace Domain.VehicleWarehouse.Api.DTO
         public string Model { get; set; }
 
         public string DateAdded { get; set; }
+
+        public bool Licensed { get; set; }
     }
 }

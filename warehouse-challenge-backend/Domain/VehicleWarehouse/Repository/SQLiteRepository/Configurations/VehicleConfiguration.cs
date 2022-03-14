@@ -21,7 +21,8 @@ namespace Domain.VehicleWarehouse.SQLiteRepository.Configurations
             builder.Property(x => x.Id).HasColumnName("id");
             builder.Property(x => x.DateAdded).HasColumnName("date_added");
             builder.Property(x => x.Price).HasColumnName("price");
-            builder.Property(x => x.Licensed).HasColumnName("licensed");
+
+            builder.Property(x => x.Licensed).HasColumnName("licensed").HasColumnType("integer");
             builder.Property(x => x.Make).HasColumnName("make");
             builder.Property(x => x.Model).HasColumnName("model");
             builder.Property(x => x.YearModel).HasColumnName("year_model");
