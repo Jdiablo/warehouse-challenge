@@ -40,8 +40,9 @@ namespace warehouse_challenge_backend
             });
 
             //services.AddVehicleWarehouseFileRepo("warehouses.json");
-            
-            services.AddVehicleWarehouseSqliteRepo("warehouses.db");
+            var folder = Environment.SpecialFolder.LocalApplicationData;
+            var path = Environment.GetFolderPath(folder);
+            services.AddVehicleWarehouseSqliteRepo(path);
             services.AddVehicleWarehouse();
         }
 

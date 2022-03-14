@@ -13,9 +13,7 @@ namespace Domain.VehicleWarehouse.SQLiteRepository.Configurations
         public static ModelBuilder WithWarehouse(this ModelBuilder modelBuilder)
         {
             modelBuilder.ApplyConfiguration(new WarehouseConfiguration())
-                .ApplyConfiguration(new WarehouseWingConfiguration())
-                .ApplyConfiguration(new VehicleConfiguration())
-                .ApplyConfiguration(new VehicleToWarehouseWingConfiguration());
+                ;
 
             return modelBuilder;
         }

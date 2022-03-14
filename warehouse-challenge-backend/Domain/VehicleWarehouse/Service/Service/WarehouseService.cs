@@ -25,7 +25,7 @@ namespace Domain.VehicleWarehouse.Services.Service
 
         public async Task<Warehouse> GetAsync(object id)
         {
-            return await _warehouseRepository.GetAsync((int)id);
+            return await _warehouseRepository.GetAsync((string)id);
         }
     }
 }

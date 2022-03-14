@@ -15,7 +15,7 @@ namespace Domain.VehicleWarehouse.Api.Mappers
             return new WarehouseWingDTO()
             {
                 Name = warehouseWing.Name,
-                Vehicles = warehouseWing.Vehicles.Select(x => x.Vehicle).OrderBy(x => x.DateAdded).Select(x => VehicleMapper.ToDto(x))
+                Vehicles = warehouseWing.Vehicles.OrderBy(x => x.DateAdded).Select(x => VehicleMapper.ToDto(x))
             };
         }
     }
