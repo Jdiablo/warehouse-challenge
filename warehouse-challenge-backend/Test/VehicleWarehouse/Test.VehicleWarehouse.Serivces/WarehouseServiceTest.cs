@@ -23,7 +23,7 @@ namespace Test.VehicleWarehouse.Serivces
         [Fact]
         public void GetWarehouse()
         {
-            var result = warehouseService.GetAsync("test").Result;
+            var result = warehouseService.GetAsync(1).Result;
 
             Assert.NotNull(result);
         }

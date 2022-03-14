@@ -1,5 +1,6 @@
 ﻿using Domain.Common.Abstractions.Entities;
 using Domain.Common.Abstractions.Repository;
+using Domain.VehicleVehicle.Services.Service;
 using Domain.VehicleWarehouse.Abstractions.Entities;
 using Domain.VehicleWarehouse.Abstractions.Repository;
 using Domain.VehicleWarehouse.Services.Service;
@@ -37,7 +38,21 @@ namespace Test.VehicleWarehouse.Serivces
                 list.Add(Moq.It.IsAny<Warehouse>());
                 return Task.FromResult(list as IEnumerable<Warehouse>);
             });
-            repo.Setup(x => x.GetAsync(It.IsAny<string>())).Returns(() => Task.FromResult(new Warehouse()));
+            repo.Setup(x => x.GetAsync(It.IsAny<int>())).Returns(() => Task.FromResult(new Warehouse()));
+
+            return repo.Object;
+        }
+
+        private IVehicleRepository SetupVehicleRepo()
+        {
+            var repo = new Mock<IVehicleRepository>();
+            repo.Setup(x => x.GetAllAsync()).Returns(() =>
+            {
+                var list = new List<Vehicle>();
+                list.Add(Moq.It.IsAny<Vehicle>());
+                return Task.FromResult(list as IEnumerable<Vehicle>);
+            });
+            repo.Setup(x => x.GetAsync(It.IsAny<int>())).Returns(() => Task.FromResult(new Vehicle()));
 
             return repo.Object;
         }
@@ -45,6 +60,11 @@ namespace Test.VehicleWarehouse.Serivces
         public WarehouseService SetupWarehouseService()
         {
             return new WarehouseService(SetupWarehouseRepo());
+        }
+
+        public VehicleService SetupVehicleService()
+        {
+            return new VehicleService(SetupVehicleRepo());
         }
     }
 }
