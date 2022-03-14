@@ -19,6 +19,20 @@
         <label class="col-3">Price</label>
         <input class="col-9" type="number" v-model="currentVehicle.price" :disabled="isEditEnabled == false" />
     </div>
+    <div class="mb-3 row">
+        <label class="col-3">Warehouse</label>
+        <input class="col-9" type="text" v-model="currentVehicle.warehouseName" :disabled="isEditEnabled == false" />
+    </div>
+    <div class="mb-3 row">
+        <label class="col-3">Location</label>
+        <input class="col-9" type="text" v-model="currentVehicle.locationName" :disabled="isEditEnabled == false" />
+    </div>
+    <div class="mb-3 row">
+        <label class="col-3">Lat</label>
+        <input class="col-3" type="text" v-model="currentVehicle.locationLat" :disabled="isEditEnabled == false" />
+        <label class="col-3">Lon</label>
+        <input class="col-3" type="text" v-model="currentVehicle.locationLong" :disabled="isEditEnabled == false" />
+    </div>
     <div class="row">
         <label class="col-3">Date added</label>
         <input class="col-9" type="text" v-model="currentVehicle.dateAdded" disabled />
@@ -27,16 +41,27 @@
 
 <script lang="ts">
     import { defineComponent } from "vue";
+    import VehicleService from "@/api/vehicle-service";
     import type VehicleFullModel from "@/types/VehicleFullModel";
 
     export default defineComponent({
-        props: {
-            currentVehicle: {
-                type: Object,
-                required: true
-            },
-            isEditEnabled: Boolean
-        }
+        data() {
+            return {
+                isEditEnabled: false,
+                currentVehicle: {} as VehicleFullModel
+            }
+        },
+        methods: {
+            getVehicle(id: number) {
+                VehicleService.get(id)
+                    .then((vehicle: VehicleFullModel) => {
+                        this.currentVehicle = vehicle;
+                    });
+            }
+        },
+        mounted() {
+            this.getVehicle(parseInt(this.$route.params.id.toString()));
+        },
     });
 </script>
 

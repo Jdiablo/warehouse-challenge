@@ -67,6 +67,7 @@
     <TypeScriptCompile Include="src\api\http-client.ts">
       <SubType>Code</SubType>
     </TypeScriptCompile>
+    <TypeScriptCompile Include="src\api\vehicle-service.ts" />
     <TypeScriptCompile Include="src\api\warehouse-service.ts">
       <SubType>Code</SubType>
     </TypeScriptCompile>

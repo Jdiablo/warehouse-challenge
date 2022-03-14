@@ -11,6 +11,8 @@
         <label class="col-3">Date added</label>
         <input class="col-9" type="text" v-model="currentVehicle.dateAdded" disabled />
     </div>
+    <router-link v-if="currentVehicle.licensed" :to="'/vehicle/' + currentVehicle.id"
+                 class="badge bg-primary">Details</router-link>
 </template>
 
 <script lang="ts">

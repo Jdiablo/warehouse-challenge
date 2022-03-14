@@ -3,4 +3,5 @@ export default interface VehicleShortModel {
 	make: string;
 	model: string;
 	dateAdded: Date;
+	licensed: boolean;
 }

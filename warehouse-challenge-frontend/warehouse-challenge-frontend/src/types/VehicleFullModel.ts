@@ -8,4 +8,8 @@ export default interface VehicleFullModel extends VehicleShortModel {
 	price: number;
 	licensed: boolean;
 	dateAdded: Date;
+	warehouseName: string;
+	locationName: string;
+	locationLat: string;
+	locationLong: string;
 }

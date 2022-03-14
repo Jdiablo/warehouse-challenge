@@ -6,6 +6,11 @@ const routes: Array<RouteRecordRaw> = [
         alias: "/warehouse",
         name: "warehouse",
         component: () => import("@/components/WarehousesList.vue"),
+    },
+    {
+        path: "/vehicle/:id",
+        name: "vehicle",
+        component: () => import("@/components/VehicleFull.vue"),
     }
 ];
 const router = createRouter({
