@@ -25,7 +25,8 @@ namespace Domain.VehicleVehicle.Services.Service
 
         public async Task<Vehicle> GetAsync(object id)
         {
-            return await _VehicleRepository.GetAsync((int)id);
+            int idInt = (int)id;
+            return await _VehicleRepository.GetAsync(x => x.Id == idInt && x.Licensed);
         }
     }
 }

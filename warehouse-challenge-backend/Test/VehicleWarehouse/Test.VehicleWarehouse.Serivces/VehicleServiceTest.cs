@@ -29,5 +29,21 @@ namespace Test.VehicleVehicle.Services
 
             Assert.NotNull(result);
         }
+
+
+        [Fact]
+        public void GetNonLicensedVehicle_Prevented()
+        {
+            IVehicleService vehicleService = new TestSetup().SetupVehicleService((vehicle) =>
+            {
+                vehicle.Id = 2;
+                vehicle.Licensed = false;
+                return vehicle;
+            });
+
+            var result = vehicleService.GetAsync(2).Result;
+
+            Assert.Null(result);
+        }
     }
 }

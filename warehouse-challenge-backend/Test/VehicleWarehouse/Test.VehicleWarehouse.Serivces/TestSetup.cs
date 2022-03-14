@@ -43,7 +43,7 @@ namespace Test.VehicleWarehouse.Serivces
             return repo.Object;
         }
 
-        private IVehicleRepository SetupVehicleRepo()
+        private IVehicleRepository SetupVehicleRepo(Func<Vehicle, Vehicle> vehicleBuilder = null)
         {
             var repo = new Mock<IVehicleRepository>();
             repo.Setup(x => x.GetAllAsync()).Returns(() =>
@@ -52,7 +52,12 @@ namespace Test.VehicleWarehouse.Serivces
                 list.Add(Moq.It.IsAny<Vehicle>());
                 return Task.FromResult(list as IEnumerable<Vehicle>);
             });
-            repo.Setup(x => x.GetAsync(It.IsAny<int>())).Returns(() => Task.FromResult(new Vehicle()));
+
+            var vehicle = new Vehicle();
+            if (vehicleBuilder != null)
+                vehicle = vehicleBuilder(vehicle);
+
+            repo.Setup(x => x.GetAsync(It.IsAny<int>())).Returns(() => Task.FromResult(vehicle));
 
             return repo.Object;
         }
@@ -62,9 +67,9 @@ namespace Test.VehicleWarehouse.Serivces
             return new WarehouseService(SetupWarehouseRepo());
         }
 
-        public VehicleService SetupVehicleService()
+        public VehicleService SetupVehicleService(Func<Vehicle, Vehicle> vehicleBuilder = null)
         {
-            return new VehicleService(SetupVehicleRepo());
+            return new VehicleService(SetupVehicleRepo(vehicleBuilder));
         }
     }
 }
