@@ -20,12 +20,19 @@ namespace Domain.VehicleWarehouse.Services.Service
 
         public async Task<IEnumerable<Warehouse>> GetAllAsync()
         {
-            return await _warehouseRepository.GetAllAsync();
+            try
+            {
+                return await _warehouseRepository.GetAllAsync();
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
         }
 
         public async Task<Warehouse> GetAsync(object id)
         {
-            return await _warehouseRepository.GetAsync((string)id);
+            return await _warehouseRepository.GetAsync((int)id);
         }
     }
 }

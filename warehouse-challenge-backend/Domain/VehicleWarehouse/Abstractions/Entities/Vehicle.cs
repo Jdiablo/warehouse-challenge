@@ -16,5 +16,9 @@ namespace Domain.VehicleWarehouse.Abstractions.Entities
         public bool Licensed { get; set; }
 
         public DateTime DateAdded { get; set; }
+
+        public int WarehouseWingId { get; set; }
+
+        public WarehouseWing WarehouseWing { get; set; }
     }
 }

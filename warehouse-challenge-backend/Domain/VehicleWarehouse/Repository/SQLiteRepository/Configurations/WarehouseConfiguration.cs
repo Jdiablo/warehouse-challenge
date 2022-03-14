@@ -21,6 +21,8 @@ namespace Domain.VehicleWarehouse.SQLiteRepository.Configurations
             builder.Property(x => x.Id).HasColumnName("id");
             builder.Property(x => x.LocationLat).HasColumnName("location_lat");
             builder.Property(x => x.LocationLong).HasColumnName("location_long");
+
+            builder.HasOne(x => x.WarehouseWing).WithOne(x => x.Warehouse).HasConstraintName("warehouse_id");
         }
     }
 }

@@ -10,7 +10,7 @@ namespace Domain.VehicleWarehouse.Api.Mappers
         {
             return new WarehouseDTO()
             {
-                Id = warehouse.Id,
+                Id = warehouse.Id.ToString(),
                 LocationLat = warehouse.LocationLat,
                 LocationLong = warehouse.LocationLong,
                 Name = warehouse.Name,
