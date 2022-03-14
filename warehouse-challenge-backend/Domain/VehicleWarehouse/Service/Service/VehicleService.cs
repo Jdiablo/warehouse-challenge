@@ -1,0 +1,38 @@
+﻿using Domain.VehicleWarehouse.Abstractions.Entities;
+using Domain.VehicleWarehouse.Abstractions.Repository;
+using Domain.VehicleWarehouse.Abstractions.Service;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Domain.VehicleVehicle.Services.Service
+{
+    public class VehicleService : IVehicleService
+    {
+        private readonly IVehicleRepository _VehicleRepository;
+
+        public VehicleService (IVehicleRepository VehicleRepository) : base()
+        {
+            _VehicleRepository = VehicleRepository;
+        }
+
+        public async Task<IEnumerable<Vehicle>> GetAllAsync()
+        {
+            try
+            {
+                return await _VehicleRepository.GetAllAsync();
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
+
+        public async Task<Vehicle> GetAsync(object id)
+        {
+            return await _VehicleRepository.GetAsync((int)id);
+        }
+    }
+}
