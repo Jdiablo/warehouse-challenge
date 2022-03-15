@@ -7,10 +7,12 @@ export default {
         cartItems: [] as VehicleFullModel[]
     },
     mutations: {
-        add(state: CartState, newItem: VehicleFullModel) {
-            if (!state.cartItems.findIndex(x => x.id == newItem.id)) {
-                state.cartItems.push(newItem);
+        addCartItem(state: CartState, newItem: VehicleFullModel) {
+            let res = [...state.cartItems];
+            if (res.findIndex(x => x.id == newItem.id) == -1) {
+                res.push(newItem);
             }
+            state.cartItems = [...res];
         }
     }
 }

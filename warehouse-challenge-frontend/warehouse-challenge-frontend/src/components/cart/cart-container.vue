@@ -1,21 +1,24 @@
 <template>
-    <h4>Your cart</h4>
+    <h4 v-if="total > 0">Your cart</h4>
     <div v-for="item in cartItems">
         <div class="cart-item">
             <span>
                 {{item.make}} {{item.model}}
             </span>
             <div>
-                {{item.price}}
+                ${{item.price}}
             </div>
         </div>
+        <hr />
     </div>
+    <p class="fw-bold" v-if="total > 0">
+        Total: ${{total}}
+    </p>
 </template>
 
 <script lang="ts">
     import { defineComponent } from "vue";
     import type VehicleFullModel from "@/types/VehicleFullModel";
-    import { Store } from 'vuex'
 
     export default defineComponent({
         data() {
@@ -25,7 +28,16 @@
         },
         computed: {
             cartItems(): VehicleFullModel[] {
-                return this.$store.state.cartItems;
+                if (this.$store.state.cart.cartItems)
+                    return this.$store.state.cart.cartItems;
+
+                return [];
+            },
+            total(): number {
+                if (this.cartItems.length == 0)
+                    return 0;
+
+                return this.cartItems.map(x => x.price).reduce((a, b) => { return a + b });
             }
         },
         mounted() {

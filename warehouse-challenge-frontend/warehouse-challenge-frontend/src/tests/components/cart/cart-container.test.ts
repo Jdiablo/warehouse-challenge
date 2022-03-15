@@ -23,3 +23,24 @@ test('renders a cart items list when not empty', async () => {
 
     expect(wrapper.findAll('.cart-item')).toHaveLength(1);
 });
+
+test('shows correct total amount', async () => {
+    let cartItems = [{ id: 1, price: 100 }, { id: 2, price: 200 }] as VehicleFullModel[];
+
+    const $store = {
+        state: {
+            cartItems: cartItems
+        },
+        commit: vi.fn()
+    }
+
+    const wrapper = mount(CartContainer, {
+        global: {
+            mocks: {
+                $store
+            }
+        }
+    });
+
+    expect(wrapper.html()).toContain(300);
+});
