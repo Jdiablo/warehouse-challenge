@@ -61,6 +61,8 @@
     <Folder Include="src\assets\" />
     <Folder Include="src\components\" />
     <Folder Include="src\api\" />
+    <Folder Include="src\components\cart\" />
+    <Folder Include="src\states\" />
     <Folder Include="src\tests\" />
     <Folder Include="src\tests\components\" />
     <Folder Include="src\types\" />
@@ -81,6 +83,9 @@
     </TypeScriptCompile>
     <TypeScriptCompile Include="src\shims-tsx.d.ts" />
     <TypeScriptCompile Include="src\shims-vue.d.ts" />
+    <TypeScriptCompile Include="src\states\cart-state.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
     <TypeScriptCompile Include="src\tests\components\vehicle-full.test.ts" />
     <TypeScriptCompile Include="src\tests\components\warehouses-list.test.ts">
       <SubType>Code</SubType>

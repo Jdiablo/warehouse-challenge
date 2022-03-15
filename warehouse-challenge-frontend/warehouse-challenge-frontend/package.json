@@ -16,7 +16,8 @@
     "popper.js": "^1.16.1",
     "vue": "^3.2.31",
     "vue-dk-toast": "^3.1.0",
-    "vue-router": "^4.0.14"
+    "vue-router": "^4.0.14",
+    "vuex": "^4.0.2"
   },
   "devDependencies": {
     "@types/node": "^16.11.25",
