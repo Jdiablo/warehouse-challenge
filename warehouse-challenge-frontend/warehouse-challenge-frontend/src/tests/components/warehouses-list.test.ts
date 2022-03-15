@@ -1,7 +1,7 @@
 import { mount } from '@vue/test-utils'
 import { expect, test, vi } from 'vitest'
 import type WarehouseModel from "@/types/WarehouseModel";
-import WarehousesList from "@/components/WarehousesList.vue"
+import WarehousesList from "@/components/warehouses-list.vue"
 import WarehouseService from "@/api/warehouse-service"
 import { nextTick } from 'vue'
 

@@ -34,20 +34,20 @@
     <Content Include="index.html" />
     <Content Include="public\favicon.ico" />
     <Content Include="src\App.vue" />
-    <Content Include="src\components\VehicleFull.vue" />
-    <Content Include="src\components\VehicleShort.vue">
+    <Content Include="src\components\vehicle-full.vue" />
+    <Content Include="src\components\vehicle-short.vue">
       <SubType>Code</SubType>
     </Content>
-    <Content Include="src\components\Warehouse.vue">
+    <Content Include="src\components\warehouse.vue">
       <SubType>Code</SubType>
     </Content>
-    <Content Include="src\components\WarehousesList.vue">
+    <Content Include="src\components\warehouses-list.vue">
       <SubType>Code</SubType>
     </Content>
-    <Content Include="src\components\WarehouseWing.vue">
+    <Content Include="src\components\warehouse-wing.vue">
       <SubType>Code</SubType>
     </Content>
-    <Content Include="src\tests\components\VehicleShort.test.ts">
+    <Content Include="src\tests\components\vehicle-short.test.ts">
       <SubType>Code</SubType>
     </Content>
     <Content Include="tsconfig.json" />
@@ -81,8 +81,8 @@
     </TypeScriptCompile>
     <TypeScriptCompile Include="src\shims-tsx.d.ts" />
     <TypeScriptCompile Include="src\shims-vue.d.ts" />
-    <TypeScriptCompile Include="src\tests\components\VehicleFull.test.ts" />
-    <TypeScriptCompile Include="src\tests\components\WarehousesList.test.ts">
+    <TypeScriptCompile Include="src\tests\components\vehicle-full.test.ts" />
+    <TypeScriptCompile Include="src\tests\components\warehouses-list.test.ts">
       <SubType>Code</SubType>
     </TypeScriptCompile>
     <TypeScriptCompile Include="src\types\VehicleFullModel.ts" />

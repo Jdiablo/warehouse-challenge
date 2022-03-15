@@ -1,7 +1,7 @@
 import { mount } from '@vue/test-utils'
 import { assert, expect, test } from 'vitest'
 import type VehicleShortModel from "@/types/VehicleShortModel"
-import VehicleShort from "@/components/VehicleShort.vue"
+import VehicleShort from "@/components/vehicle-short.vue"
 import router from "@/router"
 
 test('renders a vehicle short card info', async () => {

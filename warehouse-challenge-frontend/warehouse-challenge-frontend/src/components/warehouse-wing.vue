@@ -13,7 +13,7 @@
 
 <script lang="ts">
     import { defineComponent } from "vue";
-    import VehicleShort from "./VehicleShort.vue";
+    import VehicleShort from "./vehicle-short.vue";
 
     import type WarehouseWingModel from "@/types/WarehouseWingModel";
 

@@ -5,12 +5,12 @@ const routes: Array<RouteRecordRaw> = [
         path: "/",
         alias: "/warehouse",
         name: "warehouse",
-        component: () => import("@/components/WarehousesList.vue"),
+        component: () => import("@/components/warehouses-list.vue"),
     },
     {
         path: "/vehicle/:id",
         name: "vehicle",
-        component: () => import("@/components/VehicleFull.vue"),
+        component: () => import("@/components/vehicle-full.vue"),
     }
 ];
 const router = createRouter({

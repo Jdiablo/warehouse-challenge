@@ -15,7 +15,7 @@
 
 <script lang="ts">
     import { defineComponent } from "vue";
-    import WarehouseWing from "./WarehouseWing.vue";
+    import WarehouseWing from "./warehouse-wing.vue";
     import type WarehouseModel from "@/types/WarehouseModel";
 
     export default defineComponent({

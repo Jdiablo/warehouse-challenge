@@ -1,7 +1,7 @@
 import { mount  } from '@vue/test-utils'
 import { assert, expect, test, vi } from 'vitest'
 import type VehicleFullModel from "@/types/VehicleFullModel"
-import VehicleFull from "@/components/VehicleFull.vue"
+import VehicleFull from "@/components/vehicle-full.vue"
 
 import VehicleService from "@/api/vehicle-service"
 

@@ -12,7 +12,7 @@
 
 <script lang="ts">
     import { defineComponent } from "vue";
-    import Warehouse from "./Warehouse.vue";
+    import Warehouse from "./warehouse.vue";
     import WarehouseService from "@/api/warehouse-service";
 
     import type WarehouseModel from "@/types/WarehouseModel";
