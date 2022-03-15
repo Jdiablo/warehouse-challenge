@@ -39,7 +39,7 @@
                 <label class="col-3">Date added</label>
                 <input class="col-9" type="text" v-model="currentVehicle.dateAdded" disabled />
             </div>
-            <button class=" btn-primary" v-on:click="addVehicleToCart">Add to cart</button>
+            <button class="btn btn-primary" v-on:click="addVehicleToCart">Add to cart</button>
         </div>
         <div class="col-4">
             <CartContainer></CartContainer>

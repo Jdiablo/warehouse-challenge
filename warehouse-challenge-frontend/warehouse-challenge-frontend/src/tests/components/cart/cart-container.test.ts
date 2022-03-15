@@ -8,7 +8,9 @@ test('renders a cart items list when not empty', async () => {
 
     const $store = {
         state: {
-            cartItems: cartItems
+            cart: {
+                cartItems: cartItems
+            }
         },
         commit: vi.fn()
     }
@@ -29,7 +31,9 @@ test('shows correct total amount', async () => {
 
     const $store = {
         state: {
-            cartItems: cartItems
+            cart: {
+                cartItems: cartItems
+            }
         },
         commit: vi.fn()
     }

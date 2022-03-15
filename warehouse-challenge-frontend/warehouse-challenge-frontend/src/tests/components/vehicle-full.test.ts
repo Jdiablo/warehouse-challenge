@@ -11,7 +11,9 @@ test('renders a vehicle full card info on mounted', async () => {
     vi.spyOn(VehicleService, 'get').mockResolvedValue(vehicleData);
 
     const wrapper = mount(VehicleFull, {
+        shallow: true,
         global: {
+            stubs: ['CartContainer'],
             mocks: {
                 $route: {
                     params: {

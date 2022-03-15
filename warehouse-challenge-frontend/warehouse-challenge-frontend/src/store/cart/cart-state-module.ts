@@ -13,6 +13,13 @@ export default {
                 res.push(newItem);
             }
             state.cartItems = [...res];
-        }
+        },
+        removeCartItem(state: CartState, id: number) {
+            let idx = state.cartItems.findIndex(x => x.id == id);
+            if (idx == -1) {
+                return;
+            }
+            state.cartItems.splice(idx, 1);
+        },
     }
 }

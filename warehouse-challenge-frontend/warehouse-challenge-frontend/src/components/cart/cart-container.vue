@@ -9,6 +9,7 @@
                 ${{item.price}}
             </div>
         </div>
+        <button class="btn btn-danger"  v-on:click="removeItem(item.id)">Remove</button>
         <hr />
     </div>
     <p class="fw-bold" v-if="total > 0">
@@ -40,8 +41,10 @@
                 return this.cartItems.map(x => x.price).reduce((a, b) => { return a + b });
             }
         },
-        mounted() {
-            
+        methods: {
+            removeItem(id: number) {
+                this.$store.commit('cart/removeCartItem', id);
+            }
         }
     });
 </script>
