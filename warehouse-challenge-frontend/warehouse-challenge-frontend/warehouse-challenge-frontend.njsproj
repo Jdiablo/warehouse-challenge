@@ -65,9 +65,11 @@
     <Folder Include="src\components\" />
     <Folder Include="src\api\" />
     <Folder Include="src\components\cart\" />
-    <Folder Include="src\states\" />
+    <Folder Include="src\store\" />
+    <Folder Include="src\store\cart\" />
     <Folder Include="src\tests\" />
     <Folder Include="src\tests\components\" />
+    <Folder Include="src\tests\components\cart\" />
     <Folder Include="src\types\" />
   </ItemGroup>
   <ItemGroup>
@@ -86,14 +88,21 @@
     </TypeScriptCompile>
     <TypeScriptCompile Include="src\shims-tsx.d.ts" />
     <TypeScriptCompile Include="src\shims-vue.d.ts" />
-    <TypeScriptCompile Include="src\states\cart-state.ts">
+    <TypeScriptCompile Include="src\store\cart\cart-state-module.ts">
       <SubType>Code</SubType>
     </TypeScriptCompile>
+    <TypeScriptCompile Include="src\store\cart\cart-state.d.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="src\store\cart\cart-store-setup.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="src\tests\components\cart\cart-container.test.ts" />
     <TypeScriptCompile Include="src\tests\components\vehicle-full.test.ts" />
     <TypeScriptCompile Include="src\tests\components\warehouses-list.test.ts">
       <SubType>Code</SubType>
     </TypeScriptCompile>
-    <TypeScriptCompile Include="src\types\VehicleFullModel.ts" />
+    <TypeScriptCompile Include="src\types\VehicleFullModel.d.ts" />
     <TypeScriptCompile Include="src\types\VehicleShortModel.d.ts" />
     <TypeScriptCompile Include="src\types\WarehouseModel.d.ts" />
     <TypeScriptCompile Include="src\types\WarehouseWingModel.d.ts" />
