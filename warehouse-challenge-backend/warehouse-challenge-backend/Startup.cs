@@ -36,6 +36,8 @@ namespace warehouse_challenge_backend
                     builder =>
                     {
                         builder.AllowAnyOrigin();
+                        builder.AllowAnyHeader();
+                        builder.AllowAnyMethod();
                     });
             });
 

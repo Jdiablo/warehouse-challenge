@@ -39,7 +39,7 @@
                 <label class="col-3">Date added</label>
                 <input class="col-9" type="text" v-model="currentVehicle.dateAdded" disabled />
             </div>
-            <button class="btn btn-primary" v-on:click="addVehicleToCart">Add to cart</button>
+            <button v-if="currentVehicle.licensed" :disabled="alreadyInCart" class="btn btn-primary" v-on:click="addVehicleToCart">Add to cart</button>
         </div>
         <div class="col-4">
             <CartContainer></CartContainer>
@@ -61,6 +61,11 @@
             return {
                 isEditEnabled: false,
                 currentVehicle: {} as VehicleFullModel
+            }
+        },
+        computed: {
+            alreadyInCart(): boolean {
+                return this.$store.state.cart.cartItems.findIndex((x: any) => x.id == this.currentVehicle.id) > -1;
             }
         },
         methods: {

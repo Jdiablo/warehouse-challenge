@@ -12,6 +12,10 @@ class CartService {
     async add(cartItemId: number) {
         await http.post(`${this.serviceUrl}/${cartItemId}`);
     }
+
+    async remove(cartItemId: number) {
+        await http.delete(`${this.serviceUrl}/${cartItemId}`);
+    }
 }
 
 export default new CartService()

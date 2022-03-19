@@ -10,9 +10,10 @@ function addCartItemToState(state: CartState, newItem: VehicleFullModel) {
     if (res.findIndex(x => x.id == newItem.id) == -1) {
         res.push(newItem);
     } else {
-        return;
+        return false;
     }
     state.cartItems = [...res];
+    return true;
 }
 
 export default {
@@ -25,8 +26,8 @@ export default {
             addCartItemToState(state, newItem);
         },
         addCartItem(state: CartState, newItem: VehicleFullModel) {
-            addCartItemToState(state, newItem);
-            CartService.add(newItem.id);
+            if (addCartItemToState(state, newItem))
+                CartService.add(newItem.id);
         },
         removeCartItem(state: CartState, id: number) {
             let idx = state.cartItems.findIndex(x => x.id == id);
@@ -34,6 +35,7 @@ export default {
                 return;
             }
             state.cartItems.splice(idx, 1);
+            CartService.remove(id);
         },
     },
     actions: {
