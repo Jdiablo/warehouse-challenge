@@ -14,7 +14,8 @@ namespace Domain.VehicleWarehouse.SQLiteRepository.Configurations
         {
             modelBuilder.ApplyConfiguration(new WarehouseConfiguration())
                 .ApplyConfiguration(new WarehouseWingConfiguration())
-                .ApplyConfiguration(new VehicleConfiguration());
+                .ApplyConfiguration(new VehicleConfiguration())
+                .ApplyConfiguration(new VehicleCartConfiguration());
 
             return modelBuilder;
         }

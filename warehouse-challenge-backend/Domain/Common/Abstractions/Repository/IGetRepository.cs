@@ -15,6 +15,6 @@ namespace Domain.Common.Abstractions.Repository
     {
         public Task<IEnumerable<TEntity>> GetAllAsync();
         public Task<TEntity> GetAsync(TIdentifier id);
-        public Task<TEntity> GetAsync(Expression<Func<TEntity, bool>> expression);
+        public Task<IEnumerable<TEntity>> GetAsync(Expression<Func<TEntity, bool>> expression);
     }
 }

@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace Domain.VehicleWarehouse.SQLiteRepository.Repository
 {
-    public class BaseRepository<TDbContext, TEntity, TIdentifier> : IGetRepository<TEntity, TIdentifier>
+    public class BaseRepository<TDbContext, TEntity, TIdentifier> : IGetRepository<TEntity, TIdentifier>, IPutRepository<TEntity>
         where TDbContext : DbContext where TEntity : IdentifiableEntity<TIdentifier>
     {
         private readonly TDbContext _dbContext;
@@ -42,9 +42,14 @@ namespace Domain.VehicleWarehouse.SQLiteRepository.Repository
             return await FullQueryable.FirstOrDefaultAsync(x => x.Id.Equals(id));
         }
 
-        public async Task<TEntity> GetAsync(Expression<Func<TEntity, bool>> expression)
+        public async Task<IEnumerable<TEntity>> GetAsync(Expression<Func<TEntity, bool>> expression)
         {
-            return await FullQueryable.FirstOrDefaultAsync(expression);
+            return await FullQueryable.Where(expression).ToListAsync();
+        }
+
+        public async Task AddAsync(TEntity entity)
+        {
+            await _dbContext.AddAsync(entity);
         }
     }
 }

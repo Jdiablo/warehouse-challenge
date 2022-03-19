@@ -11,6 +11,7 @@ namespace Domain.VehicleWarehouse.Services
         public static IServiceCollection AddVehicleWarehouse(this IServiceCollection serviceCollection)
             => serviceCollection
             .AddTransient<IWarehouseService, WarehouseService>()
-            .AddTransient<IVehicleService, VehicleService>();
+            .AddTransient<IVehicleService, VehicleService>()
+            .AddTransient<ICartService, VehicleCartService>();
     }
 }

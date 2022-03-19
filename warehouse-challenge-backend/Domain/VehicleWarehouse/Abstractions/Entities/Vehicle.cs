@@ -3,15 +3,13 @@ using System;
 
 namespace Domain.VehicleWarehouse.Abstractions.Entities
 {
-    public class Vehicle : IdentifiableEntity<int>
+    public class Vehicle : PurchasableEntity<int>
     {
         public string Make { get; set; }
 
         public string Model { get; set; }
 
         public int YearModel { get; set; }
-
-        public decimal Price { get; set; }
 
         public bool Licensed { get; set; }
 

@@ -13,6 +13,7 @@ namespace Domain.VehicleWarehouse.SQLiteRepository
                 options.UseSqlite($"Data Source={sqliteFilePath}");
             })
             .AddTransient<IWarehouseRepository, WarehouseRepository>()
-            .AddTransient<IVehicleRepository, VehicleRepository>();
+            .AddTransient<IVehicleRepository, VehicleRepository>()
+            .AddTransient<IVehicleCartRepository, VehicleCartRepository>();
     }
 }
