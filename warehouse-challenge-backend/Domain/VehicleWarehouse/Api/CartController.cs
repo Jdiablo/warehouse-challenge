@@ -1,7 +1,9 @@
 ﻿using Domain.VehicleWarehouse.Abstractions.Entities;
 using Domain.VehicleWarehouse.Abstractions.Service;
+using Domain.VehicleWarehouse.Api.DTO;
 using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace Domain.VehicleWarehouse.Api
@@ -18,7 +20,15 @@ namespace Domain.VehicleWarehouse.Api
             _cartService = cartService;
         }
 
-        [HttpPost("items/add/{vehicleId}")]
+        [HttpGet("all")]
+        public async Task<IActionResult> GetAllAsync()
+        {
+            var res = await _cartService.GetAllAsync();
+
+            return Ok(res.Select(x => new CartItemDTO() { ItemId = x.VehicleId}));
+        }
+
+        [HttpPost("add/{vehicleId}")]
         public async Task<IActionResult> AddItemToCart(int vehicleId)
         {
             await _cartService.AddItemToCartAsync(vehicleId);

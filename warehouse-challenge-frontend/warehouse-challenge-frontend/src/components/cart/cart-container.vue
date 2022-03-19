@@ -42,10 +42,16 @@
             }
         },
         methods: {
+            getCart() {
+                this.$store.dispatch('cart/getCart');
+            },
             removeItem(id: number) {
                 this.$store.commit('cart/removeCartItem', id);
             }
-        }
+        },
+        mounted() {
+            this.getCart();
+        },
     });
 </script>
 

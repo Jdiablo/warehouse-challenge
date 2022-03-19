@@ -25,5 +25,15 @@ namespace Domain.VehicleWarehouse.Services.Service
                 VehicleId = cartItemId
             });
         }
+
+        public async Task<IEnumerable<VehicleCartItem>> GetAllAsync()
+        {
+            return await _vehicleCartRepository.GetAllAsync();
+        }
+
+        public async Task<VehicleCartItem> GetAsync(object id)
+        {
+            return null;
+        }
     }
 }

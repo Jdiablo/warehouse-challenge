@@ -3,6 +3,7 @@ using Domain.VehicleWarehouse.Abstractions.Repository;
 using Domain.VehicleWarehouse.Abstractions.Service;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using System.Linq;
 
 namespace Domain.VehicleVehicle.Services.Service
 {
@@ -23,7 +24,8 @@ namespace Domain.VehicleVehicle.Services.Service
         public async Task<Vehicle> GetAsync(object id)
         {
             int idInt = (int)id;
-            return await _vehicleRepository.GetAsync(x => x.Id == idInt && x.Licensed);
+            var res = await _vehicleRepository.GetAsync(x => x.Id == idInt && x.Licensed);
+            return res.FirstOrDefault();
         }
     }
 }

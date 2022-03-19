@@ -80,6 +80,7 @@
       <SubType>Code</SubType>
     </TypeScriptCompile>
     <TypeScriptCompile Include="src\api\vehicle-service.ts" />
+    <TypeScriptCompile Include="src\api\cart-service.ts" />
     <TypeScriptCompile Include="src\api\warehouse-service.ts">
       <SubType>Code</SubType>
     </TypeScriptCompile>
@@ -100,6 +101,9 @@
     <TypeScriptCompile Include="src\tests\components\cart\cart-container.test.ts" />
     <TypeScriptCompile Include="src\tests\components\vehicle-full.test.ts" />
     <TypeScriptCompile Include="src\tests\components\warehouses-list.test.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="src\types\CartItemModel.d.ts">
       <SubType>Code</SubType>
     </TypeScriptCompile>
     <TypeScriptCompile Include="src\types\VehicleFullModel.d.ts" />

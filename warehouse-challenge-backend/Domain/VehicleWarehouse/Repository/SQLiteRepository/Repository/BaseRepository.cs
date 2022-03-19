@@ -50,6 +50,7 @@ namespace Domain.VehicleWarehouse.SQLiteRepository.Repository
         public async Task AddAsync(TEntity entity)
         {
             await _dbContext.AddAsync(entity);
+            await _dbContext.SaveChangesAsync();
         }
     }
 }
