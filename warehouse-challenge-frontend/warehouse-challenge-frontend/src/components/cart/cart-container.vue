@@ -1,15 +1,18 @@
 <template>
     <h4 v-if="total > 0">Your cart</h4>
     <div v-for="item in cartItems">
-        <div class="cart-item">
-            <span>
+        <div class="cart-item row">
+            <div class="col-6">
                 {{item.make}} {{item.model}}
-            </span>
+            </div>
+            <div class="col-6">
+                <button class="btn btn-danger" v-on:click="removeItem(item.id)">Remove</button>
+            </div>
             <div>
                 ${{item.price}}
             </div>
         </div>
-        <button class="btn btn-danger"  v-on:click="removeItem(item.id)">Remove</button>
+        
         <hr />
     </div>
     <p class="fw-bold" v-if="total > 0">

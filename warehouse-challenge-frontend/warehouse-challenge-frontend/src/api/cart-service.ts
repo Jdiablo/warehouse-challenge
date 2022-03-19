@@ -8,6 +8,10 @@ class CartService {
         let response = await http.get<CartItemModel[]>(`${this.serviceUrl}/all`);
         return response.data;
     }
+
+    async add(cartItemId: number) {
+        await http.post(`${this.serviceUrl}/add/${cartItemId}`);
+    }
 }
 
 export default new CartService()
