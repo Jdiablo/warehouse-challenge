@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace Domain.VehicleWarehouse.SQLiteRepository.Repository
 {
-    public class BaseRepository<TDbContext, TEntity, TIdentifier> : IGetRepository<TEntity, TIdentifier>, IPutRepository<TEntity>
+    public class BaseRepository<TDbContext, TEntity, TIdentifier> : IGetRepository<TEntity, TIdentifier>, IPutRepository<TEntity>, IDeleteRepository<TEntity>
         where TDbContext : DbContext where TEntity : IdentifiableEntity<TIdentifier>
     {
         private readonly TDbContext _dbContext;
@@ -50,6 +50,12 @@ namespace Domain.VehicleWarehouse.SQLiteRepository.Repository
         public async Task AddAsync(TEntity entity)
         {
             await _dbContext.AddAsync(entity);
+            await _dbContext.SaveChangesAsync();
+        }
+
+        public async Task DeleteAsync(Expression<Func<TEntity, bool>> expression)
+        {
+            _dbContext.Set<TEntity>().RemoveRange(_dbContext.Set<TEntity>().Where(expression));
             await _dbContext.SaveChangesAsync();
         }
     }

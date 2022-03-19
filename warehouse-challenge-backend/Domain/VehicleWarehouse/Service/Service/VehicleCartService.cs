@@ -26,6 +26,12 @@ namespace Domain.VehicleWarehouse.Services.Service
             });
         }
 
+        public async Task DeleteAsync(object id)
+        {
+            int idInt = (int)id;
+            await _vehicleCartRepository.DeleteAsync(x => x.VehicleId == idInt);
+        }
+
         public async Task<IEnumerable<VehicleCartItem>> GetAllAsync()
         {
             return await _vehicleCartRepository.GetAllAsync();

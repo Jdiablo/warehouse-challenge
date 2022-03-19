@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Domain.VehicleWarehouse.Abstractions.Repository
 {
-    public interface IVehicleCartRepository : IGetRepository<VehicleCartItem, int>, IPutRepository<VehicleCartItem>
+    public interface IVehicleCartRepository : IGetRepository<VehicleCartItem, int>, IPutRepository<VehicleCartItem>, IDeleteRepository<VehicleCartItem>
     {
     }
 }

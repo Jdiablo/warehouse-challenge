@@ -28,10 +28,18 @@ namespace Domain.VehicleWarehouse.Api
             return Ok(res.Select(x => new CartItemDTO() { ItemId = x.VehicleId}));
         }
 
-        [HttpPost("add/{vehicleId}")]
+        [HttpPost("{vehicleId}")]
         public async Task<IActionResult> AddItemToCart(int vehicleId)
         {
             await _cartService.AddItemToCartAsync(vehicleId);
+
+            return Ok();
+        }
+
+        [HttpDelete("{vehicleId}")]
+        public async Task<IActionResult> DeleteItemFromCart(int vehicleId)
+        {
+            await _cartService.DeleteAsync(vehicleId);
 
             return Ok();
         }

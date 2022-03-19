@@ -10,7 +10,7 @@ class CartService {
     }
 
     async add(cartItemId: number) {
-        await http.post(`${this.serviceUrl}/add/${cartItemId}`);
+        await http.post(`${this.serviceUrl}/${cartItemId}`);
     }
 }
 

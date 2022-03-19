@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Domain.VehicleWarehouse.Abstractions.Service
 {
-    public interface ICartService : IGetService<VehicleCartItem>
+    public interface ICartService : IGetService<VehicleCartItem>, IDeleteService
     {
         Task AddItemToCartAsync(int cartItem);
     }
